@@ -7,7 +7,7 @@
     "build": "tsc -p tsconfig.json",
     "start": "node ./.build/index.js",
     "dev": "nodemon ./src/index.ts",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
