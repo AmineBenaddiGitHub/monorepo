@@ -32,7 +32,7 @@ describe("generateUsers", () => {
     expect(spy).toHaveBeenCalled(1);
   });
 
-  it("calling client once", async () => {
+  it("no call when wrong payload", async () => {
     const spy = vi.spyOn(clientModule.client.fakeData, "mutate");
 
     const caller = appRouter.createCaller({});
