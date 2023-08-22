@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi, beforeAll, afterAll } from "vitest";
 import { appRouter } from "./router";
 
 import { createContext } from "./context/context";
@@ -20,6 +20,18 @@ vi.mock("@faker-js/faker", () => ({
 }));
 
 describe("dataGenerator", () => {
+  beforeAll(() => {
+    vi.mock("./utils/client", () => ({
+      client: {
+        fakeData: {
+          mutate: vi.fn(),
+        },
+      },
+    }));
+  });
+  afterAll(() => {
+    vi.resetAllMocks();
+  });
   it("should generate data", async () => {
     const ctx = createContext({});
     const caller = appRouter.createCaller(ctx);
