@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
-import { appRouter } from "../router";
-import * as clientModule from "../utils/client";
+import { appRouter } from "./router";
+import * as clientModule from "./utils/client";
 
-vi.mock("../utils/client", () => ({
+vi.mock("./utils/client", () => ({
   client: {
     fakeData: {
       mutate: vi.fn(),

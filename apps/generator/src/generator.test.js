@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { appRouter } from "../router";
+import { appRouter } from "./router";
 
-import { createContext } from "../context/context";
+import { createContext } from "./context/context";
 
 vi.mock("@faker-js/faker", () => ({
   faker: {
